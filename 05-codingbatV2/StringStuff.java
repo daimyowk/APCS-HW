@@ -27,7 +27,8 @@ public class StringStuff{
 	if (n > 21){
 	    result = 2*Math.abs(n-21);
 	    return result;
-	} else {
+	}
+	else {
 	    result = Math.abs(n-21);
 	    return result;
 	}
