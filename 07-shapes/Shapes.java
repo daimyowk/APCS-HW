@@ -31,7 +31,7 @@ public class Shapes {
 	}
 	return done;
     }
-    //47
+    //about 10 mins
     public String tri2(int h){
 	int rows=1;
 	int number=0;
