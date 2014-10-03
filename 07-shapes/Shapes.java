@@ -52,4 +52,88 @@ public class Shapes {
 	}
 	return result;
     }
+    //20 mins
+    public  String tri3(int h){
+	int row=1;
+	int apart=0;
+	int bpart=0;
+	int star=0;
+	String result="";
+	for(row=1;row<=h;row++){
+	    // total characters in row subtracted by # stars in each row divided by 2 
+	    int spaces=((2*h-1)-(2*row-1))/2;
+	    for(apart=0;apart<spaces;apart++){
+		result+=".";
+	    }
+	    for(star=1;star<= 2*row-1;star++){
+		result+="*";
+	    }
+	    for(bpart=0;bpart<spaces;bpart++){
+		result+=".";
+	    }
+	    result+="\n";
+	}
+	return result;
+    }
+    // 15 mins
+    public String tri4(int h){
+	String result="";
+	int row=1;
+	int count=0;
+	int holder=0;
+	while(row<=h) {
+	    while (count<h){
+		if (holder<(row-1)) {
+		    result+=" ";
+		    holder++;
+		}
+		else {
+		    result+="*";
+		}
+		count++;
+	    }
+		row++;
+		result+="\n";
+		count=0;
+		holder=0;
+	}
+	return result;
+    }
+    public String diamond(int h) {
+	int row=1;
+	int apart=0;
+	int bpart=0;
+	int star=0;
+	String result="";
+	for(row=1;row<=((h+1)/2);row++) {
+	    int spaces=(h-(2*row-1))/2;
+	    for(apart=0;apart<spaces;apart++){
+		result+=".";
+	    }
+	    for (star=1;star<=(2*row-1);star++){
+	        result+="*";
+	    }
+	    for(bpart=0;bpart<spaces;bpart++){
+		result+=".";
+	    }
+	    result+="\n";
+	}
+	for(row=((h+1)/2+1);row<=h;row++){
+	    int spaces=(h-(2*(h-row+1))-1)/2;
+	    for(apart=0;apart<=spaces;apart++){
+		result+=".";
+	    }
+	    for (star=1;star<=((2*(h-row+1))-1);star++){
+	        result+="*";
+	    }
+	    for(bpart=0;bpart<=spaces;bpart++){
+		result+=".";
+	    }
+	    result+="\n";
+	}
+	return result;	
+	    }
+
+	    
+	
 }
