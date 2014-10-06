@@ -1,0 +1,28 @@
+public class Frame{
+    public string enclose(int r, int c){
+	int row=1;
+	int number=c;
+	String result+="";
+        for (row=1;row<r;row++){
+	    if (row==1 || row==r-1){
+		for(number=0;number<c;number++){
+		    result+="*";
+		}
+	    }
+	    else{
+		for(number=1;number<=c;number++){
+		    if (number==1 || number==c){
+			result+="*";
+		    }
+		    else{
+			result+=" ";
+		    }
+		}
+	    }
+	    result+="\n";
+	}
+	return result;
+    }
+}
+			
+	    
