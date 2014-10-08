@@ -1,0 +1,12 @@
+public class Shapes{
+    public string tri1{
+	int i,j;
+	for(i=0;i<h;i++){
+	    for(j=0;j<=i;j++){
+		s=s+"*";
+	    }
+	    s=s+"\n";
+	}
+	return s;
+    }
+}

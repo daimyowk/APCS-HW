@@ -1,0 +1,8 @@
+public class Driver{
+    public static void main(String[] args){
+	basechar c= new basechar();
+	warrior w=new warrior();
+	System.out.println(c.getHealth());
+	System.out.println(w.getHealth());
+    }
+}

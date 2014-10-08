@@ -1,0 +1,21 @@
+public class stuff {
+    public string box(int r, int c) {
+	string box="";
+	string row="";
+	int hold=0;
+	int hold2=r0;
+	while (hold<c){
+	    row+="*";
+	    hold++;
+	}
+	row+="\n";
+	while (hold2>0){
+	    box+=row;
+	    hold2--;
+	}
+	return box;
+    }
+}
+		
+	    
+		

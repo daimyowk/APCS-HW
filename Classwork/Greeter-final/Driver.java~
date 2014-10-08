@@ -1,0 +1,15 @@
+public class Driver{
+    public static void main(String[] args){
+	Greeter g1= new Greeter();
+	Greeter g2= new Greeter();
+	g1.greet();
+	g2.greet();
+	g1.greeting = new String("Sup");
+	//changes instance variable greeting in g1 only
+	//cant change if greeting is privite in Greeter class
+	//in java instance varibles always privite
+	//to get at it write accessor methods --> get and set
+	g1.greet();
+	g2.greet();
+    }
+}
