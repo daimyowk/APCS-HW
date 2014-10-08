@@ -7,5 +7,26 @@ public class Driver{
 	System.out.println(w.getHealth());
 	System.out.println(m.getHealth());
 	System.out.println(m.getManna());
+
+	Basechar c2;
+	Warrior w2;
+	Mage m2;
+
+	//no work w2=m;
+	//no work w2=c;
+	c2=w;
+	System.out.println(c2.getHealth());
+
+	c2=m;//doesnt know have getManna. superclass cant see subclass
+	System.out.println(c2.getHealth());
+	System.out.println(((Mage)c2).getManna());
+
+	w.setName("Groo");
+	m.setName("Mr. Sage");
+	w.attack(m);
+	m.attack(w);
+	w.attack(w);
+	
+	    
     }
 }
