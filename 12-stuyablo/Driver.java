@@ -12,6 +12,7 @@ public class Driver{
 	job=sc.nextLine();
 	if (job.equals("Warrior")){
 	    System.out.println("You are a Warrior.");
+
 	    System.out.println("What is your name?");
 	    String name=sc.nextLine();
 	    player = new Warrior(name);
@@ -44,7 +45,7 @@ public class Driver{
 		
 		
 	    	System.out.println("What do you want to do?");
-		System.out.println("0 for potion 1 for attack 2 for spell");
+		System.out.println("0 for potion | 1 for attack | 2 for spell |");
 		//list moves here, method of class
 		
 	        
