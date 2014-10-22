@@ -1,5 +1,5 @@
 public class Warrior extends Basechar{
-    //private int health=5000;
+    private int health=5000;
     // public Warrior(){
     //	setName("DEFAULT");
     // }
@@ -15,7 +15,7 @@ public class Warrior extends Basechar{
      public void attack(Basechar other){
 	 System.out.println(this.getName()+" is SUPERattacking "+ other.getName());
     }
-    public int getHealth(){
-	return healthboost + super.getHealth();
-    }
+    // public int getHealth(){
+    //	return healthboost + super.getHealth();
+    //}
 }

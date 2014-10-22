@@ -30,7 +30,7 @@ public class Driver{
 	*/
 	
 	Warrior w= new Warrior("groo");
-	System.out.println(w);
+	System.out.println(w.getHealth());
 	//	Warrior w2= new Warrior();
 	//System.out.println(w2);
 	    
