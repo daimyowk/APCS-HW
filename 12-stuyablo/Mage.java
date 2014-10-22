@@ -8,7 +8,7 @@ public class Mage extends baseChar{
     // private int dexterity=4;
     public Mage(String name){
     	super(name);
-	setHealth(20);
+	setHealth(25);
 	setDex(4);
 	setAttack(4);
 	setDef(2);
