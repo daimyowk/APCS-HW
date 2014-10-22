@@ -4,7 +4,7 @@ public class Mage extends baseChar{
     //private int Health=20;
     // private int attack=3;
     // private int defense=2;
-    private int mana=10;
+    //private int mana=10;
     // private int dexterity=4;
     public Mage(String name){
     	super(name);
@@ -12,7 +12,7 @@ public class Mage extends baseChar{
 	setDex(4);
 	setAttack(4);
 	setDef(2);
-	setMana(7);
+	setMana(10);
     }
     /* public Boolean runAway(){
 	//0-9
