@@ -51,25 +51,47 @@ public class Driver{
 		int n1 = sc.nextInt();
 	      	if(n1==0){
 			player.usePotion();
+			System.out.println();
 			System.out.println(player+"regains 10 health");
 		}
 		else if(n1==1){
+		    	try {
+			    Thread.sleep(1000);
+			}catch(Exception e){}
 			player.attacking(knight);
 		}
 		else {
-		    player.spell(knight);
+		    	try {
+			    Thread.sleep(1000);
+			}catch(Exception e){}
+			player.spell(knight);
 		}
+	       	try {
+		      Thread.sleep(1000);
+	       	}catch(Exception e){}
 		knight.attacking(player);
+		System.out.println();
+			try {
+			    Thread.sleep(1000);
+			}catch(Exception e){}
 		System.out.println("your health: "+player.getHealth());
 		System.out.println("his health: "+knight.getHealth());
 		if (player.getHealth()<=0 && knight.getHealth()<=0){
+		    	try {
+			    Thread.sleep(1000);
+			}catch(Exception e){}
 		    System.out.println("Both combatants fall.");
 			}
 		if (knight.getHealth()<=0){
+		    	try {
+			    Thread.sleep(1000);
+			}catch(Exception e){}
 		    System.out.println(player+" has slain the black knight");
 		}
 		if (player.getHealth()<=0){
-		   
+		   	try {
+			    Thread.sleep(1000);
+			}catch(Exception e){}
 		    System.out.println("The black knight has slain "+player);
 		    knight.setHealth(-1);
 			}
