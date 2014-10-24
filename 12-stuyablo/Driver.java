@@ -12,6 +12,7 @@ public class Driver{
 	job=sc.nextLine();
 	if (job.equals("Warrior")){
 	    System.out.println("You are a Warrior.");
+
 	    System.out.println("What is your name?");
 	    String name=sc.nextLine();
 	    player = new Warrior(name);
@@ -44,7 +45,7 @@ public class Driver{
 		
 		
 	    	System.out.println("What do you want to do?");
-		System.out.println("0 for potion 1 for attack 2 for spell");
+		System.out.println("0 for potion | 1 for attack | 2 for spell |");
 		//list moves here, method of class
 		
 	        
@@ -110,33 +111,58 @@ public class Driver{
 		
 		
 	    	System.out.println("What do you want to do?");
-		System.out.println("0 for potion 1 for attack");
+		System.out.println("0 for potion | 1 for attack | 2 for spell |");
 		//list moves here, method of class
 		
 	        
 		int n1 = sc.nextInt();
 	      	if(n1==0){
 			player.usePotion();
-			System.out.println(player+"regains 10 health"); 
+			System.out.println();
+			System.out.println(player+"regains 10 health");
 		}
-		else{
+		else if(n1==1){
+		    	try {
+			    Thread.sleep(1000);
+			}catch(Exception e){}
 			player.attacking(knight);
 		}
+		else {
+		    	try {
+			    Thread.sleep(1000);
+			}catch(Exception e){}
+			player.spell(knight);
+		}
+	       	try {
+		      Thread.sleep(1000);
+	       	}catch(Exception e){}
 		knight.attacking(player);
+		System.out.println();
+			try {
+			    Thread.sleep(1000);
+			}catch(Exception e){}
 		System.out.println("your health: "+player.getHealth());
 		System.out.println("his health: "+knight.getHealth());
 		if (player.getHealth()<=0 && knight.getHealth()<=0){
+		    	try {
+			    Thread.sleep(1000);
+			}catch(Exception e){}
 		    System.out.println("Both combatants fall.");
 			}
 		if (knight.getHealth()<=0){
+		    	try {
+			    Thread.sleep(1000);
+			}catch(Exception e){}
 		    System.out.println(player+" has slain the black knight");
 		}
 		if (player.getHealth()<=0){
-		   
+		   	try {
+			    Thread.sleep(1000);
+			}catch(Exception e){}
 		    System.out.println("The black knight has slain "+player);
 		    knight.setHealth(-1);
 			}
-	    }
+		 }
 	    	
 	    //System.out.println(player+" gets ready.");
 	    }

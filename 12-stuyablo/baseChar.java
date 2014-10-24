@@ -28,7 +28,7 @@ public class baseChar{
     }
     public void spell(baseChar other){
 	Random magic = new Random();
-	int x=2+magic.nextInt(mana);
+	int x=mana+magic.nextInt(5);
 	if(x<0){
 	    x=0;
 	}
