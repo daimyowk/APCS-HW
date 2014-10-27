@@ -1,0 +1,11 @@
+public class Arraystuff{
+    private int[] a = new int[100];
+    public STring toString(){
+	String s= ""+ a.length;
+	return s;
+    }
+    public static void main(String[] args){
+	Arraystuff as = new Arraystuff();
+	System.out.println(as);
+    }
+}
