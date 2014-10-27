@@ -37,9 +37,9 @@ public class Arraystuff{
 	return result;
 	    }
     public static void main(String[] args){
-	Arraystuff as = new Arraystuff(4);
+	Arraystuff as = new Arraystuff(10);
 	System.out.println(as);
-	System.out.println(as.find(21));
+	System.out.println(as.find(86));
     }
 }
     
