@@ -31,11 +31,12 @@ public class Arraystuff{
 	int result=-1;
 	for (int i=0; i<a.length;i++){
 	    if (a[i]==n){
-		result=i;
+		 result=i;
+		 return result;
 	    }
 	}
 	return result;
-	    }
+    }
     public int maxVal(){
 	int result=0;
 	for (int i=0; i<a.length;i++){
@@ -46,7 +47,7 @@ public class Arraystuff{
 	return result;
     }
     public static void main(String[] args){
-	Arraystuff as = new Arraystuff(20);
+	Arraystuff as = new Arraystuff(300);
 	System.out.println(as);
 	System.out.println(as.find(86));
 	System.out.println(as.maxVal());
