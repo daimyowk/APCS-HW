@@ -36,6 +36,7 @@ public class Arraystuff{
 	}
 	return result;
 	    }
+    
     public static void main(String[] args){
 	Arraystuff as = new Arraystuff(10);
 	System.out.println(as);

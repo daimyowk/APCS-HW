@@ -46,11 +46,21 @@ public class Arraystuff{
 	}
 	return result;
     }
+    public int freq(int i){
+	int result=0;
+	for (int x=0; i<a.length; i++){
+	    if (a[x]==i){
+		result++;
+	    }
+	}
+	return result;
+    }
     public static void main(String[] args){
 	Arraystuff as = new Arraystuff(300);
 	System.out.println(as);
 	System.out.println(as.find(86));
 	System.out.println(as.maxVal());
+	System.out.println(as.freq(85));
     }
 }
     
