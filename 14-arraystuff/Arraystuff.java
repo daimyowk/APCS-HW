@@ -9,7 +9,13 @@ public class Arraystuff{
 	rnd = new Random();
 	for (int i=0;i<a.length;i++){
 	    a[i] =75 + rnd.nextInt(76);
-	}
+        }
+	/*a = new int[4];
+	a[0]=1;
+	a[1]=2;
+	a[2]=52;
+	a[3]=1;
+	*/
     }
 
     public Arraystuff(){
@@ -47,9 +53,12 @@ public class Arraystuff{
 	return result;
     }
     public int freq(int i){
+	if (i>=a.length){
+	    return -1;
+	}
 	int result=0;
 	for (int x=0; i<a.length; i++){
-	    if (a[x]==i){
+	    if (a[x]==a[i]){
 		result++;
 	    }
 	}
@@ -60,7 +69,7 @@ public class Arraystuff{
 	System.out.println(as);
 	System.out.println(as.find(86));
 	System.out.println(as.maxVal());
-	System.out.println(as.freq(85));
+	System.out.println(as.freq(0));
     }
 }
     
