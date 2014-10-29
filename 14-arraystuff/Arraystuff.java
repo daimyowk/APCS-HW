@@ -81,6 +81,23 @@ public class Arraystuff{
 	}
 	return sum;
     }
+    public boolean more14(int[] nums) {
+	int one=0;
+	int four=0;
+	for (int i=0; i<nums.length; i++){
+	    if (nums[i]==1){
+		one+=1;
+	    }
+	    else if (nums[i]==4){
+		four+=1;
+	    }
+	}
+	if(one>four){
+	    return true;
+	}
+	else return false;
+    }
+
 
     public static void main(String[] args){
 	Arraystuff as = new Arraystuff(300);
