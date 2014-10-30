@@ -140,22 +140,23 @@ public class Arraystuff{
 	}
 	return false;
 }
-public int[] seriesUp(int n) {
-  int[] result= new int[n*(n+1)/2];
-  
-  for (int a=0;a<result.length;a++){
-  for (int x=1; x<=n;x++){
-  for (int y=1;y<=x;y++){
-  result[a]=y;
-  a++;
-    
-    
-    
-   }
+    public int[] seriesUp(int n) {
+	int[] result= new int[n*(n+1)/2];
+	int a=0;
+	while(a<result.length){
+	    for (int x=1; x<=n;x++){
+		for (int y=1;y<=x;y++){
+		    
+		    result[a]=y;
+		    a++;
+		    
+		    
+		    
+		}
+	    }
+	}
+	return result;
     }
-  }
-  return result;
-}
 
     public static void main(String[] args){
        	Arraystuff as = new Arraystuff(300);
