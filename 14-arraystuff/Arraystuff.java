@@ -97,14 +97,74 @@ public class Arraystuff{
 	}
 	else return false;
     }
+    public int[] tenRun(int[] nums) {
+	int j;
+	for (int i=0; i<nums.length; i++){
+	    if (nums[i]%10==0){
+		for (j=i+1; j<nums.length && nums[j]%10!=0;j++){
+		    nums[j]=nums[i];
+		}
+		i=j-1;
+	    }
+	}
+	return nums;
+    }
+    public boolean tripleUp(int[] nums) {
+	for (int i =0; i<nums.length-2;i++){
+	    if( nums[i]==nums[i+1]-1){
+		if (nums[i]==nums[i+2]-2){
+		    return true;
+		}
+	    }
+	}
+	return false;
+    }
 
+    public boolean canBalance(int[] nums) {
+	
+	for(int i=0; i<nums.length;i++){
+	    int first=0;
+	    int second=0;
+	    for (int a=i; a>=0; a--){
+		first+=nums[a];
+	    }
+	    for (int b=i+1; b<nums.length;b++){
+		second+=nums[b];
+	    }
+	    System.out.println(first);
+	    System.out.println(second);
+	    System.out.println();
+	    if (first==second){
+		return true;
+	    }
+	}
+	return false;
+}
+public int[] seriesUp(int n) {
+  int[] result= new int[n*(n+1)/2];
+  
+  for (int a=0;a<result.length;a++){
+  for (int x=1; x<=n;x++){
+  for (int y=1;y<=x;y++){
+  result[a]=y;
+  a++;
+    
+    
+    
+   }
+    }
+  }
+  return result;
+}
 
     public static void main(String[] args){
-	Arraystuff as = new Arraystuff(300);
+       	Arraystuff as = new Arraystuff(300);
 	System.out.println(as);
 	System.out.println(as.find(86));
 	System.out.println(as.maxVal());
 	System.out.println(as.freq(0));
+	int[] tester = {1, 1, 1, 2, 1};
+	System.out.println(as.canBalance(tester));
     }
 }
     
