@@ -157,7 +157,34 @@ public class Arraystuff{
 	}
 	return result;
     }
-
+    // maxMirror isn't working. Dont see how to approach the problem.
+    /*
+    public int maxMirror(int[] nums) {
+	int result=0;
+	int test=0;
+	for (int x=0; x<(nums.length); x++){
+	    for (int y=nums.length-1; y>=0; y--){
+    
+		test=0;
+		
+		while(nums[x]==nums[y] && y-1>=0 && x+1<nums.length){
+		    test++;
+		    
+		    x++;
+		    y--;  
+		}
+		
+        
+		if (test>result){
+		    result=test;
+		}
+	    }}
+	
+	return result;
+	
+    }
+    */
+    
     public static void main(String[] args){
        	Arraystuff as = new Arraystuff(300);
 	System.out.println(as);
