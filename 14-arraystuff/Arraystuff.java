@@ -184,7 +184,17 @@ public class Arraystuff{
 	
     }
     */
-    
+    public int mode(){
+	int result=a[0];
+	int counter=freq(a[0]);
+	for (int x=0;x<a.length;x++){
+	    if (freq(x)>counter){
+		counter=freq(x);
+		result=a[x];
+	    }
+	}
+	return result;
+    }
     public static void main(String[] args){
        	Arraystuff as = new Arraystuff(300);
 	System.out.println(as);
@@ -193,6 +203,7 @@ public class Arraystuff{
 	System.out.println(as.freq(0));
 	int[] tester = {1, 1, 1, 2, 1};
 	System.out.println(as.canBalance(tester));
+	System.out.println(as.mode(tester));
     }
 }
     
