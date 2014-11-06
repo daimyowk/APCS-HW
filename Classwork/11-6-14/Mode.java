@@ -88,12 +88,12 @@ public class Mode {
 	for(int i=0;i<a.length; i++){
 	    tallies[a[i]]+=1;
 	}
-	for (int i=0;i<a.length;i++){
+	/*	for (int i=0;i<a.length;i++){
 	    System.out.print(a[i] +",");
 	}
 	for (int i=0;i<tallies.length;i++){
 	    System.out.println(i+": "+tallies[i]);
-	}
+	    }*/
 	int mi=maxIndex(tallies);
 	System.out.println("Mode Count: "+tallies[mi]);
 	return mi;
