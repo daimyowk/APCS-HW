@@ -192,7 +192,7 @@ public class Arraystuff{
 	System.out.println(as.maxVal());
 	System.out.println(as.freq(0));
 	int[] tester = {1, 1, 1, 2, 1};
-	System.out.println(as.canBalance(tester));
+        
     }
 }
     
