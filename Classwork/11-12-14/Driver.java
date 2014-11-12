@@ -15,7 +15,7 @@ public class Driver{
 	System.out.println(al);
 	
     
-    ArrayList<Integar> ai = new ArrayList<Integar>();
+    ArrayList<Integer> ai = new ArrayList<Integer>();
     Random r = new Random();
     for (int i=0; i<20; i++){
 	ai.add(r.nextInt(5));
