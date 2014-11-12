@@ -9,15 +9,22 @@ public class Sarray {
 	//	int[1]=52;
 	for (int x=0;x<data.length;x++){
 	    if (data[x]==0){
-		last=x;
+		last=x-1;
 		break;
 	    }
 	}
     }
-    
+    public void lastcheck(){
+      	for (int x=0;x<data.length;x++){
+	    if (data[x]==0){
+		last=x-1;
+		break;
+	    }}
+    }
     public boolean add(int i){
         // adds an item to the end of the list, grow if needed
         // returns true
+	lastcheck();
 	if (last==(data.length-1)){
 	    int[] result = new int[data.length+1];
 	    for (int x=0;x<data.length;x++){

@@ -15,7 +15,7 @@ public class Driver{
 	System.out.println(test);
 	test.remove(1);
 	System.out.println(test);
-	test.add(2,99);
+	test.add(99);
      	System.out.println(test);
 	test.size();
 	test.set(2,991);

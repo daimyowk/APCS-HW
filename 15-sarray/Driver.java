@@ -15,13 +15,19 @@ public class Driver{
 	System.out.println(test);
 	test.remove(1);
 	System.out.println(test);
+	test.add(0,11);
+	System.out.println(test);
 	test.add(99);
      	System.out.println(test);
 	test.size();
-	test.set(2,991);
+	test.set(1,991);
+	System.out.println(test);
+	/*test.set(10,991);
 	System.out.println(test);
 	System.out.println(test.get(2));
 	System.out.println(test);
+	test.add(10,4);
+	System.out.println(test);*/
 	
     }
 }

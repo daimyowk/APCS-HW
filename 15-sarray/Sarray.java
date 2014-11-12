@@ -41,6 +41,14 @@ public class Sarray {
     public void  add(int index, int i){
         // adds item i  at index, shifting everything down as needed.
         // also grows as needed 
+        lastcheck();
+	try{ 
+	    errorEvent(index);
+	} catch(ArrayIndexOutOfBoundsException e){
+	    System.out.println(e+ ": Array size not large enough. Not done");
+	    return;
+	}
+	if (last==data.length){
 	int[] result= new int[data.length+1];
         for (int x=0;x<index;x++){
 	    result[x]=data[x];
@@ -50,6 +58,18 @@ public class Sarray {
 	    result[x+1]=data[x];
 	}
 	data=result;
+	}
+	else{
+	int[] result= new int[data.length];
+        for (int x=0;x<index;x++){
+	    result[x]=data[x];
+	}
+	result[index]=i;
+	for (int x=index+1; x<data.length;x++){
+	    result[x]=data[x-1];
+	}
+	data=result;
+	}
     }
     
     public int size() {
@@ -65,12 +85,26 @@ public class Sarray {
     
     public int get(int index) {
         // returns the item at location index of the lsit
+	lastcheck();
+	try{ 
+	    errorEvent(index);
+	} catch(ArrayIndexOutOfBoundsException e){
+	    System.out.println(e+ ": Array size not large enough. Not done");
+	    return 0;
+	}
 	return data[index];
     }
     
     public int set(int index, int i){
         // sets the item at location index to value i
         // returns the old value. 
+	lastcheck();
+	try{ 
+	    errorEvent(index);
+	} catch(ArrayIndexOutOfBoundsException e){
+	    System.out.println(e+ ": Array size not large enough. Not done");
+	    return 0;
+	}
 	int old=data[index];
 	data[index]=i;
 	return old;
@@ -81,10 +115,21 @@ public class Sarray {
 		      	s = s  + data[i]+", ";
 			return s;
 		}
+    public void errorEvent(int i ){
+	if (i>last){
+	    throw new ArrayIndexOutOfBoundsException();
+	}
+    }
     public int remove(int index){
         // removes the item at index i
         // returns the old value
-        
+        lastcheck();
+	try{ 
+	    errorEvent(index);
+	} catch(ArrayIndexOutOfBoundsException e){
+	    System.out.println(e+ ": Array size not large enough. Not done");
+	    return 0;
+	}
 	int[] result= new int[data.length];
         for (int x=0;x<index;x++){
 	    result[x]=data[x];
