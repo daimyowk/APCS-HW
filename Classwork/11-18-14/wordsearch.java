@@ -1,4 +1,4 @@
-public wordsearch{
+public class wordsearch{
     private char[][] board;
 
     public wordsearch(int r, int c){
