@@ -24,7 +24,7 @@ public class wordsearch{
 	}
 	}
 	else{
-	    //not working for left
+	    
 	    if (c-(w.length())<0){
 		c=w.length()-1;
 	    }
