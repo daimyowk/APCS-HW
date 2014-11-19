@@ -26,7 +26,7 @@ public class wordsearch{
 	else{
 	    //not working for left
 	    if (c-(w.length())<0){
-		c=0;
+		c=w.length()-1;
 	    }
 	    for (int i=0;i< w.length();i++){
 		board[row][c]=w.charAt(i);
