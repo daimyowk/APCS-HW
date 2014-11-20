@@ -52,7 +52,7 @@ public class wordsearch{
 		c=board[0].length-w.length();
 	    }
 	    if (illegalOverlap(dir, w, row, c)){
-		System.out.println("Cannot overlap at row"+row+" column"+c+" with " + w);
+		System.out.println("Cannot overlap at location");
 		return;
 	    }
 	for (int i=0;i< w.length();i++){
@@ -65,7 +65,7 @@ public class wordsearch{
 		c=w.length()-1;
 	    }
 	    if (illegalOverlap(dir, w, row, c)){
-		System.out.println("Cannot overlap at row"+row+" column"+c+" with " + w);
+		System.out.println("Cannot overlap at location");
 		return;
 	    }
 	    for (int i=0;i< w.length();i++){
