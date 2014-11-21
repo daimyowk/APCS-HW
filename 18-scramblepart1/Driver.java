@@ -12,7 +12,15 @@ public class Driver{
 	System.out.println(w.illegalOverlap("right","look",3,14));
 		w.addWordH("right","look",-3,20);//test illegal roww
 		w.addWordH("right","look",3,55);//test illegal col
-	
+		w.addWordH("left","hey",7,55);
+		w.addWordV("down","test",3,22);
+		w.addWordV("up","mister",13,13);
+		w.addWordV("down","horrible",22,5); //test illegal row
+		w.addWordV("up","check",19,-45);//test illegal col
+		w.addWordV("up","time",20,11);
+			w.addWordV("down","crazy",4,22); //test illegal overlap
+			w.addWordV("up","cracy",4,23); //illegal overlap
+			w.addWordV("down","stairs",5,22);//legal overlap
 	System.out.println(w);
     }
 }
