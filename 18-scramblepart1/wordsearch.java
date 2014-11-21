@@ -54,7 +54,60 @@ public class wordsearch{
 		r--;
 	    }
 	}
+	else if (dir.equals("southwest")){
+	    for (int i=0;i<w.length();i++){
+		if(!(board[r][c]=='.' || board[r][c]==w.charAt(i))){
+		    result=true;
+		}
+		r++;
+		c--;
+	    }
+	}
 	return result;
+    }
+    public void addWordD(String dir, String w, int row, int col){
+	int r=row;
+	int c=col;
+	if (c>board[0].length){
+	    c=board[0].length-1;
+	}
+	else if(col<0){
+	    c=0;
+	}
+	if (r>=board.length){
+	    r=board.length-1;
+	}
+	else if(r<0){
+	    r=0;
+	}
+	if (dir.equals("southwest")){
+	    for(int i=0;i<w.length();i++){
+		board[r][c]=w.charAt(i);
+		r++;
+		c--;
+	    }
+	}
+	if (dir.equals("southeast")){
+	    for(int i=0;i<w.length();i++){
+		board[r][c]=w.charAt(i);
+		r++;
+		c++;
+	    }
+	}
+	if (dir.equals("northeast")){
+	    for(int i=0;i<w.length();i++){
+		board[r][c]=w.charAt(i);
+		r--;
+		c++;
+	    }
+	}
+	if (dir.equals("northwest")){
+	    for(int i=0;i<w.length();i++){
+		board[r][c]=w.charAt(i);
+		r--;
+		c--;
+	    }
+	}
     }
     public void addWordV(String dir, String w, int row, int col){
 	int r = row;
