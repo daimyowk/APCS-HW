@@ -21,6 +21,7 @@ public class Driver{
 			w.addWordV("down","crazy",4,22); //test illegal overlap
 			w.addWordV("up","cracy",4,23); //illegal overlap
 			w.addWordV("down","stairs",5,22);//legal overlap
+			w.addWordD("southwest","class",14,28);
 	System.out.println(w);
     }
 }
