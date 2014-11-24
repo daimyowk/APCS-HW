@@ -1,7 +1,9 @@
+import java.io.*;
+import java.util.*;
 public class Driver{
     public static void main(String args[]){
 	wordsearch w= new wordsearch();
-       	w.addWordH("right","hello",3,15);//should work
+	/*	w.addWordH("right","hello",3,15);//should work
 	//w.addWordH("right","hello",3,34);
 	w.addWordH("left","hello",3,1);
         w.addWordH("left","hello",4,7);
@@ -23,7 +25,8 @@ public class Driver{
 			w.addWordV("down","stairs",5,22);//legal overlap
 			w.addWordD("southwest","class",14,28);
 			w.addWordD("southeast","whack",100,-100);
-			System.out.println(w.addWord("ball"));
+			System.out.println(w.addWord("ball"));*/
+        w.FillIn();
 	System.out.println(w);
     }
 }

@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.*;
 public class wordsearch{
     private char[][] board;
@@ -19,6 +20,26 @@ public class wordsearch{
      after correcting column issue checks if overlap. if illegal overlap then
      stops and returns message
      */
+    public ArrayList<String> ReadFile(){
+	ArrayList<String> result = new ArrayList<String>();
+	try{
+	Scanner sc=new Scanner(new File("words.txt"));
+	while (sc.hasNext()){
+	    String s=sc.next();
+	    result.add(s);
+	}
+	}
+	catch(Exception e){
+	    System.out.println("File not found");
+	    System.exit(0);
+	}
+	return result;
+    }
+    public void FillIn(){
+	for (int x=0;x<ReadFile().size();x++){
+	    addWord(ReadFile().get(x));
+	}
+    }
     public boolean addWord(String w){
 	Random r = new Random();
 	int row=r.nextInt(board.length);
