@@ -1,3 +1,4 @@
+import java.util.*;
 public class wordsearch{
     private char[][] board;
 
@@ -18,6 +19,83 @@ public class wordsearch{
      after correcting column issue checks if overlap. if illegal overlap then
      stops and returns message
      */
+    public boolean addWord(String w){
+	Random r = new Random();
+	int row=r.nextInt(board.length);
+	int col=r.nextInt(board[0].length);
+	int direction=r.nextInt(8);
+        
+	if (direction==0){
+	    addWordH("right",w,row,col);
+	    //fixing of row and col to work only occurs in addWordH locally have to redo 
+	    if ((w.length()+col)>board[0].length){
+		col=board[0].length-w.length();
+	    }
+	    return !(illegalOverlap("right",w,row,col));
+	}
+	else if (direction==1){
+	    addWordH("left",w,row,col);
+	    if (col-(w.length())<0){
+		col=w.length()-1;
+	    }
+	    return !(illegalOverlap("left",w,row,col));
+	}
+	else if (direction==2){
+	    addWordV("up",w,row,col);
+	    if((row-w.length())<0){
+		row=w.length()-1;
+	    }
+	    return !(illegalOverlap("up",w,row,col));
+	}
+	else if (direction==3){
+	    addWordV("down",w,row,col);
+	    if((w.length()+row)>board.length){
+		    row=board.length-w.length();
+		}
+	    return !(illegalOverlap("down",w,row,col));
+	}
+	else if (direction==4){
+	    addWordD("southwest",w,row,col);
+	    if((w.length()+row)>board.length){
+		    row=board.length-w.length();
+		}
+	    if (col-(w.length())<0){
+		col=w.length()-1;
+	    }
+	    return !(illegalOverlap("southwest",w,row,col));
+	}
+	else if (direction==5){
+	    addWordD("southeast",w,row,col);
+	    if((w.length()+row)>board.length){
+		    row=board.length-w.length();
+		}
+	    if ((w.length()+col)>board[0].length){
+		col=board[0].length-w.length();
+	    }
+	    return !(illegalOverlap("southeast",w,row,col));
+	}
+	else if (direction==6){
+	    addWordD("northeast",w,row,col);
+	    if((row-w.length())<0){
+		row=w.length()-1;
+	    }
+	    if ((w.length()+col)>board[0].length){
+		col=board[0].length-w.length();
+	    }
+	    return !(illegalOverlap("northeast",w,row,col));
+	}
+	else if (direction==7){
+	    addWordD("northwest",w,row,col);
+	    if((row-w.length())<0){
+		row=w.length()-1;
+	    }
+	    if (col-(w.length())<0){
+		col=w.length()-1;
+	    }
+	    return !(illegalOverlap("northwest",w,row,col));
+	}
+	return false;
+    }
     public boolean illegalOverlap(String dir, String w, int row, int col){
 	boolean result=false;
 	int c = col;
@@ -63,8 +141,37 @@ public class wordsearch{
 		c--;
 	    }
 	}
+	else if (dir.equals("southeast")){
+	    for (int i=0;i<w.length();i++){
+		if(!(board[r][c]=='.' || board[r][c]==w.charAt(i))){
+		    result=true;
+		}
+		r++;
+		c++;
+	    }
+	}
+	else if(dir.equals("northeast")){
+	    for(int i=0;i<w.length();i++){
+		if(!(board[r][c]=='.' || board[r][c]==w.charAt(i))){
+		    result=true;
+		}
+		r--;
+		c++;
+	    }
+	}
+	else if(dir.equals("northwest")){
+	    for(int i=0;i<w.length();i++){
+		if(!(board[r][c]=='.' || board[r][c]==w.charAt(i))){
+		    result=true;
+		}
+		r--;
+		c--;
+	    }
+	}
 	return result;
     }
+   
+	
     public void addWordD(String dir, String w, int row, int col){
 	int r=row;
 	int c=col;
@@ -81,6 +188,16 @@ public class wordsearch{
 	    r=0;
 	}
 	if (dir.equals("southwest")){
+	    if((w.length()+r)>board.length){
+		    r=board.length-w.length();
+		}
+	    if (c-(w.length())<0){
+		c=w.length()-1;
+	    }
+	    if (illegalOverlap(dir, w, r, c)){
+		System.out.println("Cannot overlap at row"+row+" column"+c+" with " + w);
+		return;
+	    }
 	    for(int i=0;i<w.length();i++){
 		board[r][c]=w.charAt(i);
 		r++;
@@ -88,6 +205,16 @@ public class wordsearch{
 	    }
 	}
 	if (dir.equals("southeast")){
+	    if((w.length()+r)>board.length){
+		    r=board.length-w.length();
+		}
+	    if ((w.length()+c)>board[0].length){
+		c=board[0].length-w.length();
+	    }
+	    if (illegalOverlap(dir, w, r, c)){
+		System.out.println("Cannot overlap at row"+row+" column"+c+" with " + w);
+		return;
+	    }
 	    for(int i=0;i<w.length();i++){
 		board[r][c]=w.charAt(i);
 		r++;
@@ -95,6 +222,16 @@ public class wordsearch{
 	    }
 	}
 	if (dir.equals("northeast")){
+	    if((r-w.length())<0){
+		r=w.length()-1;
+	    }
+	    if ((w.length()+c)>board[0].length){
+		c=board[0].length-w.length();
+	    }
+	    if (illegalOverlap(dir, w, r, c)){
+		System.out.println("Cannot overlap at row"+row+" column"+c+" with " + w);
+		return;
+	    }
 	    for(int i=0;i<w.length();i++){
 		board[r][c]=w.charAt(i);
 		r--;
@@ -102,6 +239,16 @@ public class wordsearch{
 	    }
 	}
 	if (dir.equals("northwest")){
+	    if((r-w.length())<0){
+		r=w.length()-1;
+	    }
+	    if (c-(w.length())<0){
+		c=w.length()-1;
+	    }
+	    if (illegalOverlap(dir, w, r, c)){
+		System.out.println("Cannot overlap at row"+row+" column"+c+" with " + w);
+		return;
+	    }
 	    for(int i=0;i<w.length();i++){
 		board[r][c]=w.charAt(i);
 		r--;
