@@ -1,0 +1,1 @@
+Everything seems to be working. Able to add words in from a text file using all orientations and at different locations. Seems overlaps occur rarely.
