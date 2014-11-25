@@ -26,7 +26,7 @@ public class Driver{
 			w.addWordD("southwest","class",14,28);
 			w.addWordD("southeast","whack",100,-100);
 			System.out.println(w.addWord("ball"));*/
-        w.FillIn();
+        w.FillIn(2);
 	System.out.println(w);
     }
 }

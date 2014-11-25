@@ -1,14 +1,27 @@
 import java.io.*;
 import java.util.*;
 public class wordsearch{
-    private char[][] board;
-
+    private char[][] board,key;
+    private Random rnd=  new Random();
+    private ArrayList<String> wordlist, words;
     public wordsearch(int r, int c){
 	board= new char[r][c];
 	for(int i=0;i<board.length;i++){
 	    for(int j=0;j<board[i].length;j++){
 		board[i][j]='.';
     }
+	}
+	ArrayList<String> wordlist = new ArrayList<String>();
+	try{
+	Scanner sc=new Scanner(new File("words.txt"));
+	while (sc.hasNext()){
+	    String s=sc.next();
+	    wordlist.add(s);
+	}
+	}
+	catch(Exception e){
+	    System.out.println("File not found");
+	    System.exit(0);
 	}
     }
     public wordsearch(){
@@ -20,6 +33,7 @@ public class wordsearch{
      after correcting column issue checks if overlap. if illegal overlap then
      stops and returns message
      */
+    /*
     public ArrayList<String> ReadFile(){
 	ArrayList<String> result = new ArrayList<String>();
 	try{
@@ -34,11 +48,40 @@ public class wordsearch{
 	    System.exit(0);
 	}
 	return result;
-    }
-    public void FillIn(){
-	for (int x=0;x<ReadFile().size();x++){
-	    addWord(ReadFile().get(x));
+	}*/
+    public void FillIn(int numwords){
+	words  = new ArrayList<String>();
+	int i=0;
+	while (i<numwords){
+	    int wordIndex = rnd.nextInt(wordlist.size());
+	    String word = wordlist.get(wordIndex);
+	    if (addWord(word)){
+		words.add(word);
+		wordlist.remove(wordIndex);
+		i++;
+	    }
 	}
+	makeKey();
+	for (i = 0; i< board.length;i++){
+	    for (int j=0;j<board[0].length;j++){
+		if (board[i][j]=='.'){
+		    // board[i][j]=(char)((int)'A'+rnd.nextInt(26));
+		    String letters="abcdefghijklmnopqrstuvwxyz";
+		    board[i][j] = letters.charAt(rnd.nextInt(letters.length()));
+		}
+	    }
+	}
+    }
+    private void makeKey(){
+	key=new char[board.length][board[0].length];
+	for (int i = 0; i< board.length;i++){
+	    for (int j=0;j<board[i].length;j++){
+		key[i][j]=board[i][j];
+	    }
+	}
+    }
+    public String getKey(){
+
     }
     public boolean addWord(String w){
 	Random r = new Random();
