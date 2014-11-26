@@ -16,6 +16,7 @@ public class Sarray {
 	}
     }
     public void lastcheck(){
+	last=data.length-1;
       	for (int x=0;x<data.length;x++){
 	    if (data[x].equals(null)){
 		last=x-1;
@@ -41,8 +42,12 @@ public class Sarray {
     
     public void  add(int index, String i){
         // adds item i  at index, shifting everything down as needed.
-        // also grows as needed 
+        // also grows as needed
+	System.out.println(last);
         lastcheck();
+	System.out.println(data.length-1);
+	System.out.println(last);
+	    
 	try{ 
 	    errorEvent(index);
 	} catch(ArrayIndexOutOfBoundsException e){
