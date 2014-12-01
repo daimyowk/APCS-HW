@@ -7,17 +7,17 @@ public class Driver{
 	    result+=test[x]+",";
 	}
 	System.out.println(result);*/
-	//	String[] input = {"today","snow","thanks","yo", ,};
-	String[] input = new String[5];
+	String[] input = {"a","b","d","e"};
+	/*String[] input = new String[5];
 	input[0]="today";
 	input[1]="snow";
 	input[2]="thanks";
 	input[3]="yo";
 	if(input[4]==null){
 	    System.out.println("true");
-	}
+	    }*/
        	OrderedSuperArray tester=new OrderedSuperArray(input);
-	tester.add("check");
+	/*tester.add("check");
 	System.out.println(tester.size());
 	System.out.println(tester);
 	tester.add(2,"let");
@@ -25,6 +25,7 @@ public class Driver{
 	tester.set(2,"change");
 	System.out.println(tester);
 	tester.remove(3);
-	System.out.println(tester);
+	System.out.println(tester);*/
+	tester.add("c");
     }
 }
