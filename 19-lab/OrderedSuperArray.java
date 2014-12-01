@@ -8,6 +8,15 @@ public class OrderedSuperArray extends Sarray{
     }
     public boolean add(String i){
 	int index=-1; //states i larger than everything
+	int a=0;
+	if (data[0].charAt(a)==i.charAt(a)){
+	    a++;
+	}
+	if (data[0].charAt(a)>i.charAt(a)){
+	    index=0;
+	    System.out.println(index);
+	    return true;
+	}
 	for (int x=0;x<data.length-1;x++){
       	    int y=0;
 	    int z=0;
