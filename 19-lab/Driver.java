@@ -16,13 +16,15 @@ public class Driver{
 	if(input[4]==null){
 	    System.out.println("true");
 	}
-       	Sarray tester=new Sarray(input);
+       	OrderedSuperArray tester=new OrderedSuperArray(input);
 	tester.add("check");
 	System.out.println(tester.size());
 	System.out.println(tester);
 	tester.add(2,"let");
 	System.out.println(tester);
 	tester.set(2,"change");
+	System.out.println(tester);
+	tester.remove(3);
 	System.out.println(tester);
     }
 }
