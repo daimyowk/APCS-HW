@@ -7,7 +7,7 @@ public class Driver{
 	    result+=test[x]+",";
 	}
 	System.out.println(result);*/
-	String[] input = {"a","b","d","e"};
+	String[] input = {"aa","ad","acd","ae","az"};
 	/*String[] input = new String[5];
 	input[0]="today";
 	input[1]="snow";
@@ -26,6 +26,6 @@ public class Driver{
 	System.out.println(tester);
 	tester.remove(3);
 	System.out.println(tester);*/
-	tester.add("c");
+	tester.add("acde");
     }
 }
