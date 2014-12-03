@@ -22,7 +22,7 @@ public class OrderedSuperArray extends Sarray{
 	    //boolean smallerthancurrent;
 	for (int x=1;x<data.length;x++){
       	    int y=0;
-	    
+	    //doesnt work if i is smaller than what is being checked
 	    boolean holder=true;
 	    while (data[x].charAt(y)==i.charAt(y) && holder){
 		y++;
