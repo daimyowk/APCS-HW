@@ -7,6 +7,22 @@ public class OrderedSuperArray extends Sarray{
 	return;
     }
     public boolean add(String i){
+	for (int x=0;x<last;x++){
+	    if (i.compareTo(data[x])<0){
+		super.add(x,i);
+		return true;
+	    }
+	}
+       	super.add(i);
+	return true;
+    }
+    public String set(int index, String i){
+        super.remove(index);
+	this.add(i);
+	return i;
+    }
+    /*		    
+    public boolean add(String i){
 	int index=-1; //states i larger than everything
 	int a=0;
 	if (data[0].charAt(a)==i.charAt(a)){
@@ -66,7 +82,7 @@ public class OrderedSuperArray extends Sarray{
 	}
 	System.out.println(index);
 	return true;
-    }
+	}*/
 }
     
 	    /*
