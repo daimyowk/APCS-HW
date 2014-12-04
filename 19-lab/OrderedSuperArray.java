@@ -17,21 +17,64 @@ public class OrderedSuperArray extends Sarray{
 	    System.out.println(index);
 	    return true;
 	}
-	for (int x=0;x<data.length-1;x++){
+	else{
+	    boolean biggerthanlast=false;
+	    //boolean smallerthancurrent;
+	for (int x=1;x<data.length;x++){
       	    int y=0;
-	    int z=0;
-	    while (data[x].charAt(y)==i.charAt(y)){
+	    //doesnt work if i is smaller than what is being checked
+	    boolean holder=true;
+	    while (data[x].charAt(y)==i.charAt(y) && holder){
 		y++;
-	    }
-	    while (data[x+1].charAt(z)==i.charAt(z)){
-		z++;
-	    }
-	    if ((int)i.charAt(y)>(int)data[x].charAt(y) && (int)i.charAt(z)<(int)data[x+1].charAt(z)){
-		index=x+1;
+		if (y>data[x].length()-1){
+		    biggerthanlast=true;
+		    holder=false;
+		    y--;
+		}
+		if (y>i.length()-1){
+		    holder=false;
+		    
+		    y--;
+		}
 	    }
 	    
+		
+	    if (biggerthanlast){
+		 holder=true;
+		while (data[x].charAt(y)==i.charAt(y) && holder){
+		    y++;
+		    if (y>data[x].length()-1){
+			biggerthanlast=true;
+			holder=false;
+			y--;
+		    }
+		    if (y>i.length()-1){
+			holder=false;
+			
+			y--;
+		    }
+		}
+		if ((int)i.charAt(y)<(int)data[x].charAt(y)){
+		    index=x;
+		    break;
+		}
+	    }
+	    if ((int)i.charAt(y)>(int)data[x].charAt(y)){
+		biggerthanlast=true;
+	    }
+	}
 	}
 	System.out.println(index);
 	return true;
     }
 }
+    
+	    /*
+	    while (data[x+1].charAt(z)==i.charAt(z)){
+		z++;
+	    }
+	    if ((int)i.charAt(y)>(int)data[x].charAt(y) && (int)i.charAt(z)<(int)data[x+1].charAt(z)){
+		index=x+1;
+		}*/
+	    
+    
