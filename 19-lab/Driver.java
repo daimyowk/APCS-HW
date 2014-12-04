@@ -8,7 +8,7 @@ public class Driver{
 	}
 	System.out.println(result);*/
 	//String[] input = {"ab","ac","ad","ada","az"};
-       	String[] input = {"ab","ac","ad","afa","az"};
+       	String[] input = {"ab","aceag","ad","afa","ay"};
 	/*String[] input = new String[5];
 	input[0]="today";
 	input[1]="snow";
@@ -27,7 +27,11 @@ public class Driver{
 	System.out.println(tester);
 	tester.remove(3);
 	System.out.println(tester);*/
-	tester.add("ae");
+	tester.add("abawg");
+	System.out.println(tester);
+	tester.set(4,"ba");
+	System.out.println(tester);
+        
 	
 	//	tester.add("acde");//not working
     }
