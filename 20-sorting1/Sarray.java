@@ -188,8 +188,8 @@ public class Sarray {
     }
     public void ssort(){
 	int x;
-	int smallestindex=0;
-	String smallestString=data[0];
+	int smallestindex;
+	String smallestString;
 	for (int i=0;i<data.length;i++){
 	    smallestindex=i;
 	    smallestString=data[i];
