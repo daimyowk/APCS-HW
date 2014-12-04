@@ -186,6 +186,26 @@ public class Sarray {
 	
 	}
     }
+    public void ssort(){
+	int x;
+	int smallestindex=0;
+	String smallestString=data[0];
+	for (int i=0;i<data.length;i++){
+	    smallestindex=i;
+	    smallestString=data[i];
+	    for (x=i;x<data.length;x++){
+	    if (data[x].compareTo(smallestString)<0){
+		smallestindex=x;
+		smallestString=data[x];
+		System.out.println(smallestString);
+		System.out.println(smallestindex);
+	    }
+	    }
+	    data[smallestindex]=data[i];
+	    data[i]=smallestString;
+	    
+	}
+    }
 }
 
 
