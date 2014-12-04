@@ -168,10 +168,10 @@ public class Sarray {
     public void isort(){
 	String newvalue;
 	int i;
-	for (int x=0;x<data.length;x++){
-	    newvalue=data[x];
-	    remove(x);
-	    last=data.length-1;
+        
+	for (int last=0;last<data.length;last++){
+	    newvalue=data[last];
+	    
 	    
 	    for(i=last;i>0 && newvalue.compareTo(data[i-1])<0;i--){
 		data[i]=data[i-1];
