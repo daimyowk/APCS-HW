@@ -178,11 +178,11 @@ public class Sarray {
 	    }
 
 	    data[i]=newvalue;
-	    String s = "";
+	    /*String s = "";
 	    for (int z=0;z<data.length;z++){
 		      	s = s  + data[z]+", ";
 	    }
-	    System.out.println(s);
+	    System.out.println(s);*/
 	
 	}
     }
