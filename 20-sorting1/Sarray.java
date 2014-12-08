@@ -197,8 +197,8 @@ public class Sarray {
 		if (data[x].compareTo(smallestString)<0){
 		    smallestindex=x;
 		    smallestString=data[x];
-		    System.out.println(smallestString);
-		    System.out.println(smallestindex);
+		    // System.out.println(smallestString);
+		    // System.out.println(smallestindex);
 		}
 	    }
 	    data[smallestindex]=data[i];
@@ -206,6 +206,21 @@ public class Sarray {
 	    
 	}
     }
+    public void bsort(){
+	for (int y=0;y<data.length-1;y++){
+	    for (int x=0;x<data.length-1;x++){
+		if (data[x].compareTo(data[x+1])>0){
+		    String holder1=data[x];
+		    String holder2=data[x+1];
+		    data[x+1]=holder1;
+		    data[x]=holder2;
+		}
+	    }
+	}
+    }
+    //when dealing with a small array, all three short methods take the same
+    //amount of time. However as the array gets larger, bubble sort takes longer
+    // than the other two.
 }
 
 
