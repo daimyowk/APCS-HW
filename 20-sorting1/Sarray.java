@@ -165,19 +165,24 @@ public class Sarray {
 	}
 	data=result;
 	}*/
+    //n^2
     public void isort(){
 	String newvalue;
 	int i;
-        
+        int assignCounter=0;
+	int compareCounter=0;
 	for (int last=0;last<data.length;last++){
 	    newvalue=data[last];
 	    
 	    
 	    for(i=last;i>0 && newvalue.compareTo(data[i-1])<0;i--){
 		data[i]=data[i-1];
+		assignCounter++;
+		compareCounter++;
 	    }
 
 	    data[i]=newvalue;
+	    assignCounter++;
 	    /*String s = "";
 	    for (int z=0;z<data.length;z++){
 		      	s = s  + data[z]+", ";
@@ -185,11 +190,19 @@ public class Sarray {
 	    System.out.println(s);*/
 	
 	}
+	System.out.println(compareCounter);
     }
+    //ssort
+    //find min --> n
+    //do n times
+    //n^2 times but n always decrease in 2nd loop
+    //(n^2+n)/2 as n gets larger only n^2
     public void ssort(){
 	int x;
 	int smallestindex;
 	String smallestString;
+	int assignCounter=0;
+	int compareCounter=0;
 	for (int i=0;i<data.length;i++){
 	    smallestindex=i;
 	    smallestString=data[i];
@@ -197,14 +210,17 @@ public class Sarray {
 		if (data[x].compareTo(smallestString)<0){
 		    smallestindex=x;
 		    smallestString=data[x];
+		    compareCounter++;
 		    // System.out.println(smallestString);
 		    // System.out.println(smallestindex);
 		}
 	    }
 	    data[smallestindex]=data[i];
 	    data[i]=smallestString;
+	    assignCounter+=2;
 	    
 	}
+	System.out.println(compareCounter);
     }
     public void bsort(){
 	for (int y=0;y<data.length-1;y++){
@@ -221,6 +237,11 @@ public class Sarray {
     //when dealing with a small array, all three short methods take the same
     //amount of time. However as the array gets larger, bubble sort takes longer
     // than the other two.
+
+    //compare on different data sets
+    //number of assignments
+    //number of comparsions
+    //builtin Arrays.sort(data)
 }
 
 

@@ -12,6 +12,8 @@ public class Driver{
 			  "sushi","bento","seven","sword","armor","magic",
 			  "comics","book","novel","nobel","noble","DNA",
 			  "science","chinese","bagel","donut","language"};
+	//77 words
+	String[] input2 = {"choose","master","java","driver","folder"};
 	Sarray tester=new Sarray(input);
 	//System.out.println(tester);
 	//	tester.isort();
@@ -24,7 +26,6 @@ public class Driver{
 	//	System.out.println(tester);
 	if (args[0].equals("i")){
 	   tester.isort();
-	  
 	}
 	else if(args[0].equals("s")){
 	    tester.ssort();
