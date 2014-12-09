@@ -1,3 +1,4 @@
+import java.util.Arrays;
 public class Driver{
     public static void main(String args[]){
 	String[] input = {"fj","ac","agh","wag","aiuhw","li","awh","hdf","more",
@@ -11,7 +12,8 @@ public class Driver{
 			  "open","close","face","book","homework","crunchy",
 			  "sushi","bento","seven","sword","armor","magic",
 			  "comics","book","novel","nobel","noble","DNA",
-			  "science","chinese","bagel","donut","language"};
+			  "science","chinese","bagel","donut","language"
+			  ,"hopper","mac","bin"};
 	//77 words
 	String[] input2 = {"choose","master","java","driver","folder"};
 	Sarray tester=new Sarray(input);
@@ -33,5 +35,8 @@ public class Driver{
 	else if(args[0].equals("b")){
 	   tester. bsort();
 	   }
+	else if(args[0].equals("*")){
+	    Arrays.sort(input);
+	}
     }
 }

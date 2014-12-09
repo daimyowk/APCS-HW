@@ -169,8 +169,8 @@ public class Sarray {
     public void isort(){
 	String newvalue;
 	int i;
-        int assignCounter=0;
-	int compareCounter=0;
+	int assignCounter=0;
+		int compareCounter=0;
 	for (int last=0;last<data.length;last++){
 	    newvalue=data[last];
 	    
@@ -201,8 +201,8 @@ public class Sarray {
 	int x;
 	int smallestindex;
 	String smallestString;
-	int assignCounter=0;
-	int compareCounter=0;
+		int assignCounter=0;
+		int compareCounter=0;
 	for (int i=0;i<data.length;i++){
 	    smallestindex=i;
 	    smallestString=data[i];
@@ -217,7 +217,7 @@ public class Sarray {
 	    }
 	    data[smallestindex]=data[i];
 	    data[i]=smallestString;
-	    assignCounter+=2;
+	     assignCounter+=2;
 	    
 	}
 	System.out.println(compareCounter);
