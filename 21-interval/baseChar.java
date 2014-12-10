@@ -84,6 +84,9 @@ public class baseChar implements Comparable{
 	characters.add(Joe);
 	characters.add(Tom);
 	characters.add(Sam);
+	System.out.println(Collection.toString(characters));
+	collection.sort(characters);
+	System.out.println(Collection.toString(characters));
     }
 }
 
