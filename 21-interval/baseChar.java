@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 public class baseChar implements Comparable{
     private String name="DEFAULT";
     private int Health=30;
@@ -82,7 +83,7 @@ public class baseChar implements Comparable{
     }
     
     public static void main(String args[]){
-	ArrayList<baseChar> characters = new ArrayList<baseChar>();
+	/*	ArrayList<baseChar> characters = new ArrayList<baseChar>();
 	baseChar Joe = new baseChar("Joe");
 	baseChar Tom = new baseChar("Tom");
 	baseChar Sam = new baseChar("Sam");
@@ -92,8 +93,21 @@ public class baseChar implements Comparable{
 	characters.add(Sam);
 	characters.add(Rosa);
 	System.out.println(characters.toString());
-	Collections.sort(characters);
-	System.out.println(characters.toString());
+	Collections.sort(characters); 
+	/*
+	Dont know why but when using arraylists, when call
+	Collections.sort(), java gives warning about unchecked and unsafe 
+	operation
+	s*/
+	System.out.println(characters.toString());*/
+	baseChar Joe = new baseChar("Joe");
+	baseChar Tom = new baseChar("Tom");
+	baseChar Sam = new baseChar("Sam");
+	baseChar Rosa = new baseChar("Rosa");
+	baseChar[] character={Joe,Tom,Rosa,Sam};
+	System.out.println(Arrays.toString(character));
+	Arrays.sort(character);
+	System.out.println(Arrays.toString(character));
 	}
     //subclasses inherit the Comparble
     //when calling comparable in subclass, must inherit then implement
