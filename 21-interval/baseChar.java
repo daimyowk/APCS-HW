@@ -13,6 +13,7 @@ public class baseChar implements Comparable{
 	baseChar o = (baseChar)other;
 	return this.name.compareTo(o.name);
     }
+
     public baseChar(){
 	name="bob";
     }
@@ -76,18 +77,27 @@ public class baseChar implements Comparable{
     public void setMana(int m){
 	this.mana=m;
     }
+    public String getName(){
+	return this.name;
+    }
+    
     public static void main(String args[]){
 	ArrayList<baseChar> characters = new ArrayList<baseChar>();
 	baseChar Joe = new baseChar("Joe");
 	baseChar Tom = new baseChar("Tom");
 	baseChar Sam = new baseChar("Sam");
+	baseChar Rosa = new baseChar("Rosa");
 	characters.add(Joe);
 	characters.add(Tom);
 	characters.add(Sam);
-	System.out.println(Collection.toString(characters));
-	collection.sort(characters);
-	System.out.println(Collection.toString(characters));
-    }
+	characters.add(Rosa);
+	System.out.println(characters.toString());
+	Collections.sort(characters);
+	System.out.println(characters.toString());
+	}
+    //subclasses inherit the Comparble
+    //when calling comparable in subclass, must inherit then implement
+    //implement then inherit doesnt work
 }
 
 
