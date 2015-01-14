@@ -1,0 +1,18 @@
+https://github.com/BruceFalco/ProjectA
+Ball.java
+-should clarify what xa and ya mean and do (lines 8-9)
+-should also clarify why needed constructor with Game class (lines 12-14)
+-maybe use else if at lines 19 and lines 23. makes it not have to
+go through both if first one is true
+-seems fine. just needs comments explaining each method
+
+Racquet.java/Paddle.java
+-same with Ball.java, clarify xa (line 10) and why constructor
+of Game is need (lines 13-15)
+-the Game class doesn't seem to be called in any of Paddle's methods
+so maybe Constructor isnt really needed
+-once again just add comment explaining everything
+
+Overall code seems to be all fine.
+
+
